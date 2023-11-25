@@ -14,7 +14,15 @@ module.exports = {
       },
       backgroundColor: {
         yellow: "#E1C300",
-        bgblack: "#212122"
+        bgblack: "#212122",
+      },
+      screens: {
+        xs: "386px",
+        sm: "640px",
+        md: "1000px",
+        lg: "1120px",
+        xl: "1280px",
+        "2xl": "1536px",
       },
     },
   },
