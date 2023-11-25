@@ -1,4 +1,3 @@
-
 const TopAnnouncement = () => {
   return (
     <div className="bg-yellow py-3 text-center">
@@ -10,6 +9,6 @@ const TopAnnouncement = () => {
       </span>
     </div>
   );
-}
+};
 
-export default TopAnnouncement
+export default TopAnnouncement;

@@ -17,34 +17,33 @@ import { useState } from "react";
 
 const Navbar = () => {
   const shop = [
-  "H&M",
-  "Levi's",
-  "Under Armour",
-  "Puma",
-  "Forever 21",
-  "Tommy Hilfiger",
-];
+    "H&M",
+    "Levi's",
+    "Under Armour",
+    "Puma",
+    "Forever 21",
+    "Tommy Hilfiger",
+  ];
 
   const [showBrandsDropdown, setShowBrandsDropdown] = useState(false);
   const [showShopDropdown, setShowShopDropdown] = useState(false);
-  const [showMoblieMenu, setShowMobileMenu] = useState(false)
+  const [showMoblieMenu, setShowMobileMenu] = useState(false);
 
-   const handleMouseEnterBrands = () => {
-     setShowBrandsDropdown(true);
-   };
+  const handleMouseEnterBrands = () => {
+    setShowBrandsDropdown(true);
+  };
 
-   const handleMouseLeaveBrands = () => {
-     setShowBrandsDropdown(false);
-   };
+  const handleMouseLeaveBrands = () => {
+    setShowBrandsDropdown(false);
+  };
 
-   const handleMouseEnterShop = () => {
-     setShowShopDropdown(true);
-   };
+  const handleMouseEnterShop = () => {
+    setShowShopDropdown(true);
+  };
 
-   const handleMouseLeaveShop = () => {
-     setShowShopDropdown(false);
-   };
-
+  const handleMouseLeaveShop = () => {
+    setShowShopDropdown(false);
+  };
 
   return (
     <>

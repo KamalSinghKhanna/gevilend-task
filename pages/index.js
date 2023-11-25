@@ -4,7 +4,7 @@ import TopAnnouncement from "@/components/TopAnnouncement";
 import Navbar from "@/components/Navbar";
 import Banner from "@/components/Banner";
 import Carousel from "@/components/Carousel";
-
+import Head from "next/head";
 export default function Home() {
   const IMAGES = [
     { img: "/half1.png", text: "$hosky", bgColor: "rgb(35, 107, 211)" },
@@ -18,42 +18,47 @@ export default function Home() {
 
   const [isAnnouncementVisible, setAnnouncementVisible] = useState(true);
 
- useEffect(() => {
-   const handleScroll = () => {
-     const scrollPosition = window.scrollY;
-     console.log("Scroll Position:", scrollPosition);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      console.log("Scroll Position:", scrollPosition);
 
-     const scrollThreshold = 100;
-     setAnnouncementVisible(scrollPosition < scrollThreshold);
-   };
+      const scrollThreshold = 100;
+      setAnnouncementVisible(scrollPosition < scrollThreshold);
+    };
 
-   window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
-   return () => {
-     window.removeEventListener("scroll", handleScroll);
-   };
- }, []);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="w-full h-full">
-      {/* Show the announcement based on visibility state */}
-  
+    <>
+      <Head>
+        <title>brava | shop NFT Apparel, Art, Accessories & Home</title>
+        <link rel="icon" href="/logo.webp" />
+      </Head>
+      <div className="w-full h-full">
+        {/* Show the announcement based on visibility state */}
 
-      <div
-        className={
-          isAnnouncementVisible
-            ? "fixed top-0 z-10 w-full"
-            : "fixed top-[-3rem] z-10 w-full"
-        }
-      >
-        <TopAnnouncement />
-        <Navbar />
-      </div>
+        <div
+          className={
+            isAnnouncementVisible
+              ? "fixed top-0 z-10 w-full"
+              : "fixed top-[-3rem] z-10 w-full"
+          }
+        >
+          <TopAnnouncement />
+          <Navbar />
+        </div>
 
-      <div className={isAnnouncementVisible ? "pt-24" : "pt-44"}>
-        <Banner />
-        <Carousel images={IMAGES} />
+        <div className={isAnnouncementVisible ? "pt-24" : "pt-44"}>
+          <Banner />
+          <Carousel images={IMAGES} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }

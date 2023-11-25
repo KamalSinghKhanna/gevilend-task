@@ -46,30 +46,29 @@ const Banner = () => {
     autoplaySpeed: 5000,
     pauseOnHover: true,
     rtl: true,
-     afterChange: (index) => {
+    afterChange: (index) => {
       setFade(true); // Trigger fade-out animation on slide change
       setTimeout(() => {
         setFade(false);
         setCurrentSlide(index);
-         // Trigger fade-in animation after a delay
+        // Trigger fade-in animation after a delay
       }, 300); // Adjust the delay as needed to match your transition duration
     },
-
   };
 
-   useEffect(() => {
-     const interval = setInterval(() => {
-       if (!isHovered) {
-         sliderRef.current.slickPrev();
-       }
-     }, settings.autoplaySpeed);
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (!isHovered) {
+        sliderRef.current.slickPrev();
+      }
+    }, settings.autoplaySpeed);
 
-     return () => clearInterval(interval);
-   }, [settings.autoplaySpeed, isHovered]);
+    return () => clearInterval(interval);
+  }, [settings.autoplaySpeed, isHovered]);
 
-   const handleHover = (hovered) => {
-     setIsHovered(hovered);
-   };
+  const handleHover = (hovered) => {
+    setIsHovered(hovered);
+  };
 
   const goToPrev = () => {
     sliderRef.current.slickPrev();

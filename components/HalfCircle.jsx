@@ -2,9 +2,9 @@ import React from "react";
 import Image from "next/image";
 
 const HalfCircle = ({ img, text, bgColor }) => {
-     const containerStyle = {
-       backgroundColor: bgColor,
-     };
+  const containerStyle = {
+    backgroundColor: bgColor,
+  };
   return (
     <div
       className={`rounded-l-full flex py-5 px-5 justify-between mr-5`}
