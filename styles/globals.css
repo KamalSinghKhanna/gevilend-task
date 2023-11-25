@@ -2,3 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+body{
+  overflow-x: hidden;
+}
+
+/* banner */
+
+/* Add this to your CSS file or style block */
+.slick-slider {
+  height: 100vh; /* Set the height of the slider to 100% of the viewport height */
+}
+
+.slick-slider img {
+  object-fit: cover; /* Make the images cover the entire height while maintaining aspect ratio */
+  height: 100%; /* Set the height of the images to 100% of the slider */
+  width: 100%; /* Set the width of the images to 100% of the slider */
+}
+
+/* Adjust the height of the slider for mobile devices */
+@media only screen and (max-width: 600px) {
+  .slick-slider {
+    height: 100vh; /* Set the height for mobile devices to cover the entire screen */
+  }
+}
+
+
+
+/*  */
+
+
+.slide-text{
+  font-size: 4.3rem;
+  font-weight: 900;
+  line-height: 80px;
+  color: #ffffff;
+  font-family: 'Josefin Sans', sans-serif;
+  width: 10rem;
+}
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 33.33%; /* Adjust the percentage based on the number of items you want to show */
+  width: 100%;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% + 1px));
+  }
+}
+
+
+
+
+
+
+/* Dropdown.css */
+.dropdown-item {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.dropdown-item:hover {
+  color: yellow;
+}
+
+.dropdown-item:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: yellow;
+  animation: underline-expand 0.3s ease;
+}
+
+@keyframes underline-expand {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
